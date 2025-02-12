@@ -28,44 +28,38 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(tarefa C CXX ASM)
+project(controle_servo C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(
-    tarefa
-    tarefa.c
-    display/ssd1306.c
-    neopixel/neopixel.c
-)
+add_executable(controle_servo controle_servo.c )
 
-pico_set_program_name(tarefa "tarefa")
-pico_set_program_version(tarefa "0.1")
+pico_set_program_name(controle_servo "controle_servo")
+pico_set_program_version(controle_servo "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(tarefa 0)
-pico_enable_stdio_usb(tarefa 1)
+pico_enable_stdio_uart(controle_servo 0)
+pico_enable_stdio_usb(controle_servo 0)
 
 # Add the standard library to the build
 target_link_libraries(
-    tarefa
+    controle_servo
     pico_stdlib
-    hardware_pio
-    hardware_i2c
+    hardware_pwm
 )
 
 # Add the standard include files to the build
-target_include_directories(tarefa PRIVATE
+target_include_directories(controle_servo PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(tarefa 
+target_link_libraries(controle_servo 
         
         )
 
-pico_add_extra_outputs(tarefa)
+pico_add_extra_outputs(controle_servo)
 
