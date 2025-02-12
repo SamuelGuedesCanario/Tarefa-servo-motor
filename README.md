@@ -1,4 +1,4 @@
-# Embarcatech-U4C7
+# Embarcatech-TarefaPWM
 
 Este projeto demonstra o controle de um servomotor utilizando PWM no microcontrolador RP2040 (Raspberry Pi Pico).
 
@@ -67,7 +67,7 @@ Para testes, o PWM foi aplicado a um LED na plataforma BitdogLab (pino 12 - LED 
 
 ### 🗂 Estrutura do Código
 
-- **`U4T7.C`** - Código principal que configura o PWM e controla o servomotor.
+- **`tarefa.C`** - Código principal que configura o PWM e controla o servomotor.
 - **`CMakeLists.txt`** - Configuração do projeto para CMake.
 - **`diagram.json`** - Diagramas de conexões.
 
@@ -80,14 +80,14 @@ Para testes, o PWM foi aplicado a um LED na plataforma BitdogLab (pino 12 - LED 
    ```
 3. **Acesse o diretório do projeto:**
    ```sh
-   cd Embarcatech-U4C7
+   cd Tarefa-servo-motor
    ```
 4. **Compile o projeto:**
    ```sh
    cmake -B build && cmake --build build
    ```
 5. **Copie para o Pico:**
-   - Após a compilação, copie o arquivo `U4C7.uf2` da pasta `build` para o Raspberry Pi Pico.
+   - Após a compilação, copie o arquivo `tarefa.uf2` da pasta `build` para o Raspberry Pi Pico.
    - O código será executado automaticamente.
 
 ## 🎥 Demonstração
